@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="360dp"
+    android:orientation="vertical"
+    android:layout_gravity="bottom"
+    android:background="@drawable/bottom_sheet_background"
+    android:padding="16dp"
+    android:visibility="visible">
+
+    <View
+        android:layout_width="36dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:background="@drawable/drag_handle"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/bs_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Walk Details"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/bs_sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tap to expand for territory insights"
+        android:textSize="12sp"
+        android:textColor="@color/white_80"
+        android:layout_marginTop="6dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="always">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="12dp">
+
+            <TextView
+                android:id="@+id/bs_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Distance: 0.0 km\nArea: 0.00 km²\nOwned tiles: 0"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+
+            <!-- action buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <Button
+                    android:id="@+id/btn_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Share"
+                    style="@style/NeonButtonSmall"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_export"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Export"
+                    style="@style/NeonButtonSmall"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

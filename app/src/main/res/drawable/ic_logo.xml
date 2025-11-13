@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Outer neon circle -->
+    <path
+        android:fillColor="#A653FF"
+        android:pathData="M50,10a40,40 0 1,0 40,40h-10a30,30 0 1,1 -30,-30z"/>
+
+    <!-- Inner glowing G -->
+    <path
+        android:fillColor="#3DFFE6"
+        android:pathData="M58,50v8h-16v-6h10v-2c0,-3.3 -2.7,-6 -6,-6 -3.3,0 -6,2.7 -6,6h-4c0,-5.5 4.5,-10 10,-10 5.5,0 10,4.5 10,10z"/>
+</vector>

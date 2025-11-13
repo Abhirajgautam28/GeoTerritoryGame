@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "134663127080",
+    "project_id": "geoterritory-c4b56",
+    "storage_bucket": "geoterritory-c4b56.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134663127080:android:55cadad39ce8b41328351d",
+        "android_client_info": {
+          "package_name": "com.example.geoterritory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvqVXAoU3GEN5fMXCAnZN_MS7IqKCWH10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
