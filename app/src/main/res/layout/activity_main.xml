@@ -1,154 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/dark_bg">
 
-    <!-- Map -->
+    <!-- FULLSCREEN MAP -->
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
-    <!-- Neon pulse overlay (keeps centered until we animate) -->
-    <FrameLayout
-        android:id="@+id/pulseContainer"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="32dp"
-        android:translationZ="8dp"
-        android:visibility="gone"
-        android:layout_marginStart="16dp">
-
-        <View
-            android:id="@+id/pulse"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/radar_circle"
-            android:alpha="0.45"/>
-    </FrameLayout>
-
-    <!-- Glass header card -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/headerCard"
+    <!-- NEON TOP BAR -->
+    <LinearLayout
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="84dp"
-        android:layout_margin="16dp"
-        android:layout_marginTop="28dp"
-        app:cardCornerRadius="16dp"
-        app:cardUseCompatPadding="true"
-        android:translationZ="12dp"
-        android:foreground="?attr/selectableItemBackground">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="12dp">
+        android:layout_height="70dp"
+        android:layout_margin="12dp"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/neon_glass_panel"
+        android:elevation="10dp">
 
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="GeoTerritory"
-                android:textAllCaps="true"
-                android:textSize="18sp"
-                android:typeface="sans"
-                android:letterSpacing="0.02"
-                android:textColor="@color/white"/>
+        <ImageView
+            android:id="@+id/icProfile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_avatar_glow"
+            android:layout_marginEnd="10dp" />
 
-            <TextView
-                android:id="@+id/tvSubtitle"
-                android:layout_below="@id/tvTitle"
-                android:layout_marginTop="4dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Walk • Territory • Score"
-                android:textSize="12sp"
-                android:textColor="@color/white_80"/>
-
-            <ImageView
-                android:id="@+id/icProfile"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_avatar"
-                android:contentDescription="profile"
-                android:tint="@color/neon_pink"/>
-
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- Steps card (mini glass) -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/stepsCard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_gravity="top|start"
-        app:cardCornerRadius="12dp"
-        app:cardUseCompatPadding="true"
-        android:translationZ="10dp"
-        android:layout_marginTop="120dp">
         <LinearLayout
+            android:id="@+id/stepsContainer"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/tvSteps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Steps: 0"
-                android:textColor="@color/white"
-                android:textStyle="bold"/>
+                android:text="STEPS: 0"
+                android:textColor="@color/neon_cyan"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/tvDistance"
+                android:text="DISTANCE: 0m"
+                android:textColor="@color/white_80"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvArea"
+                android:text="AREA: 0 m²"
+                android:textColor="@color/white_80"
+                android:textSize="14sp" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <!-- Animated Floating Action Button group -->
+    </LinearLayout>
+
+
+    <!-- NEON BOTTOM CONTROLS -->
+    <LinearLayout
+        android:id="@+id/bottomControls"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:layout_margin="12dp"
+        android:background="@drawable/neon_glass_panel"
+        android:padding="12dp"
+        android:elevation="10dp">
+
+        <Button
+            android:id="@+id/btnStart"
+            style="@style/NeonButton"
+            android:text="START WALK"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="55dp" />
+
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="12dp" />
+
+        <Button
+            android:id="@+id/btnStop"
+            style="@style/NeonButton"
+            android:text="STOP"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="55dp" />
+
+    </LinearLayout>
+
+
+    <!-- NEON FLOATING ACTION BUTTON -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabMain"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="20dp"
-        android:src="@drawable/ic_map_pin"
-        app:backgroundTint="@color/neon_blue"
-        app:fabSize="normal"
-        android:tint="@color/white"/>
-
-    <!-- Extra FABs (initially hidden) -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabStart"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="96dp"
-        android:visibility="gone"
-        android:src="@drawable/ic_walk"
-        app:backgroundTint="@color/neon_green"
-        android:tint="@color/white"/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabLayers"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="160dp"
-        android:visibility="gone"
-        android:src="@drawable/ic_layers"
-        app:backgroundTint="@color/neon_purple"
-        android:tint="@color/white"/>
-
-    <!-- Bottom sheet -->
-    <com.google.android.material.bottomsheet.BottomSheetBehavior
-        android:id="@+id/bs_holder" />
-
-    <include layout="@layout/bottom_sheet_details" />
+        android:id="@+id/fabDetails"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_layers_glow"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="150dp"
+        app:tint="@color/neon_purple"
+        app:backgroundTint="@android:color/transparent"
+        android:background="@drawable/neon_fab_glow" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

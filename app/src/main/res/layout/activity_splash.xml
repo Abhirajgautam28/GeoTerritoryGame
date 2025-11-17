@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/splash_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_bg">
+    android:background="@color/dark_bg"
+    android:gravity="center">
 
     <ImageView
-        android:id="@+id/ivLogo"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_gravity="center"
-        android:src="@drawable/ic_logo"
-        android:contentDescription="logo"/>
+        android:id="@+id/splashLogo"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/ic_logo_glow" />
 
     <TextView
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="80dp"
+        android:id="@+id/splashTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="GeoTerritory"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:textStyle="bold"/>
+        android:textColor="@color/neon_purple"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginTop="180dp" />
 
 </FrameLayout>
