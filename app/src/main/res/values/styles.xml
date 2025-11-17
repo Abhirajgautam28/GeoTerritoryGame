@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Neon Button Large -->
+    <style name="NeonButtonLarge" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_neon_button_large</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Neon Button Small -->
+    <style name="NeonButtonSmall" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_neon_button_small</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Rounded Neon Card -->
+    <style name="NeonCard">
+        <item name="android:background">@drawable/bg_neon_card</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+</resources>
